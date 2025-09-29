@@ -1,10 +1,14 @@
 # Deep Learning Project - Docker
 
 ## Építés
-docker build -t deep-learning-project .
+docker build -t my-dl-project-work-app:1.0 .
 
-## Futtatás (GPU)
-docker run --gpus all -it --rm -v $(pwd)/data:/data deep-learning-project
+## Futtatás (CPU)
+docker run -d --name my-ml-container --gpus all -v D:\Egyetem\Melytanulas\data:/data -v D:\Egyetem\Melytanulas\output:/app/output my-dl-project-work-app:1.0
 
-## Notebook
-docker run --gpus all -it --rm -p 8888:8888 -v $(pwd)/data:/data -v $(pwd)/notebook:/app/notebook deep-learning-project jupyter notebook --ip=0.0.0.0 --allow-root --notebook-dir=/app/notebook
+## Kód futtatás
+docker exec my-ml-container bash run.sh
+
+##Leállítás és törlés
+docker stop my-ml-container
+docker rm my-ml-container
