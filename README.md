@@ -9,6 +9,6 @@ docker run -d --name my-ml-container --gpus all -v D:\Egyetem\Melytanulas\data:/
 ## Kód futtatás
 docker exec my-ml-container bash run.sh
 
-##Leállítás és törlés
+## Leállítás és törlés
 docker stop my-ml-container
 docker rm my-ml-container
