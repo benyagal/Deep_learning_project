@@ -11,4 +11,5 @@ docker exec my-ml-container bash run.sh
 
 ## Leállítás és törlés
 docker stop my-ml-container
+
 docker rm my-ml-container
